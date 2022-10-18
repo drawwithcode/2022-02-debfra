@@ -1,5 +1,5 @@
 let rectangles = [];
-const xPosList = [400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000,3100,3200,3300,3400,3500,3600,3700,3800,3900,4000,4100,4200,4300,4400] 
+const xPosList = [100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900] 
 const yPosList = [200, 290, 380, 470, 560, 650, 740,830,920,1010,1100]
 let value = 0
 
@@ -15,7 +15,7 @@ function setup() {
 function draw() {
  background(0);
  //create a grid of rectangles 90x50
- for(let x = 0; x < windowWidth; x += 50)  
+ for(let x = 0; x < windowWidth-30; x += 50)  
   { for(let y = 200; y < 1200; y+=90) {
  stroke(255);
  strokeWeight(1,5);
@@ -29,7 +29,7 @@ function draw() {
  textFont("Red Hat Display");
  textAlign(CENTER);
  textStyle(NORMAL);
- textSize(45);
+ textSize(30);
  fill(300);
  text(myText, width/2, windowHeight-200);
 
@@ -56,10 +56,12 @@ class Rect {
    this.width = rectwidth;
    this.height = rectheigth;
  }
+
  updatePosition() {
    this.x = random(xPosList); 
    this.y = random(yPosList);
  }
+
  show() {
    push();
    drawingContext.shadowBlur = value;
